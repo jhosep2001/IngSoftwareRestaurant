@@ -1,4 +1,4 @@
-package co.edu.udem.patrones_diseño.entities;
+package co.edu.udem.dp.entities;
 
 public abstract class MotivoReserva{
 
