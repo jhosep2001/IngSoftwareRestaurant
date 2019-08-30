@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Cocina extends JefeCocina {
+public class Cocina {
 
     //Atributos para Mocks
     private static List<Cliente> clientes = new ArrayList<Cliente>();
     private static List<Mesa> mesas = new ArrayList<Mesa>();
     private static List<Reserva> reservas = new ArrayList<Reserva>();
-    private GranChef granChef;
 
     public static void main (String[] args){
 
@@ -51,10 +50,6 @@ public class Cocina extends JefeCocina {
         reservas.stream().forEach(reserva -> System.out.println("Reserva de: "+reserva.getCliente().getName() +"," +
                 " Mesa escogida: "+reserva.getMesa().toString()+" Fecha de uso: "+reserva.getFechaDeUso()));
 
-    }
-
-    public Cocina (){
-        this.granChef = new GranChef();
     }
 
     private static void crearCliente(Cliente cliente){
