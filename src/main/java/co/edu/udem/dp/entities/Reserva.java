@@ -1,11 +1,19 @@
 package co.edu.udem.dp.entities;
 
+import co.edu.udem.dp.entities.mesas.Mesa;
+import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
+import co.edu.udem.dp.entities.motivosReservas.MotivoReservaAniversario;
+import co.edu.udem.dp.entities.motivosReservas.MotivoReservaBienvenida;
+import co.edu.udem.dp.entities.usuarios.JefeCocina;
+import co.edu.udem.dp.entities.usuarios.Usuario;
+
+import java.util.Date;
+
 public class Reserva {
 
-    private Cliente cliente;
+    private Usuario usuario;
     private Mesa mesa;
     private MotivoReserva motivoReserva;
-    private JefeCocina jefeCocina;
     private Long valor;
     private String fechaReserva;
     private String fechaDeUso;
@@ -13,19 +21,30 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(Cliente cliente, Mesa mesa, MotivoReserva motivoReserva, JefeCocina jefeCocina) {
-        this.cliente = cliente;
+    public Reserva(Usuario usuario, Mesa mesa, MotivoReserva motivoReserva, String fechaDeUso) {
+        this.usuario = usuario;
         this.mesa = mesa;
         this.motivoReserva = motivoReserva;
-        this.jefeCocina = jefeCocina;
+        this.fechaDeUso = fechaDeUso;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public void crearMotivo(String nombre){
+        switch (nombre){
+            case "aniversario":
+                this.motivoReserva = new MotivoReservaAniversario(nombre);
+                break;
+            default:
+                this.motivoReserva = new MotivoReservaBienvenida("");
+        }
+        this.motivoReserva.añadirElemento();
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Mesa getMesa() {
@@ -42,14 +61,6 @@ public class Reserva {
 
     public void setMotivoReserva(MotivoReserva motivoReserva) {
         this.motivoReserva = motivoReserva;
-    }
-
-    public JefeCocina getJefeCocina() {
-        return jefeCocina;
-    }
-
-    public void setJefeCocina(JefeCocina jefeCocina) {
-        this.jefeCocina = jefeCocina;
     }
 
     public Long getValor() {
