@@ -4,7 +4,8 @@ import co.edu.udem.dp.entities.Reserva;
 import co.edu.udem.dp.entities.mesas.*;
 import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
 import co.edu.udem.dp.entities.usuarios.Usuario;
-
+import co.edu.udem.dp.fabricas.FabricaMesa;
+import co.edu.udem.dp.reportes.ReporteRestauranteVisitor;
 
 
 import java.time.LocalDateTime;
@@ -24,18 +25,12 @@ public class Restaurante {
         return reservas.add(reserva);
     }
 
-    public void crearMesa( int capacidad){
-        if( capacidad == 1){
-            mesas.add(new MesaIndividual(capacidad));
-        } else if( capacidad == 2){
-            mesas.add(new MesaPareja(capacidad));
-        } else if( capacidad < 2){
-            mesas.add(new MesaGrupal(capacidad));
-        }
+    public void añadirMesaConCapacidad( int capacidad){
+        mesas.add(FabricaMesa.crearMesaConCapacidad(capacidad));
     }
 
-    public void crearMesalounge(int capacidad){
-        mesas.add(new MesaLounge(capacidad));
+    public void añadirMesaLoungeConCapacidad(int capacidad){
+        mesas.add(FabricaMesa.crearMesaLoungeConCapacidad(capacidad));
     }
 
     public List<Mesa> verDisponibilidad(String fechaDeUso){
@@ -53,11 +48,15 @@ public class Restaurante {
 
     public MotivoReserva generarMotivoReserva(String motivo){
         Reserva reserva = new Reserva();
-        reserva.crearMotivo(motivo);
+        reserva.añadirMotivoReserva(motivo);
         return reserva.getMotivoReserva();
     }
 
     public List<Reserva> getReservas() {
         return reservas;
+    }
+
+    public void accept(ReporteRestauranteVisitor visitor){
+        visitor.generarReporteVisit(this);
     }
 }

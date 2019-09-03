@@ -1,18 +1,11 @@
 package co.edu.udem.dp.main;
 
-import co.edu.udem.dp.entities.*;
 import co.edu.udem.dp.entities.mesas.*;
 import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
-import co.edu.udem.dp.entities.motivosReservas.MotivoReservaAniversario;
-import co.edu.udem.dp.entities.motivosReservas.MotivoReservaCumpleanos;
 import co.edu.udem.dp.entities.usuarios.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -21,14 +14,14 @@ public class Main {
 
     public static void main (String[] args){
         negocio.crearClienteNormal("yasuri", "yasuri@yamile.com", "holi");
-        negocio.getRestaurante().crearMesa(1);
-        negocio.getRestaurante().crearMesa(2);
-        negocio.getRestaurante().crearMesa(4);
-        negocio.getRestaurante().crearMesalounge(4);
+        negocio.getRestaurante().añadirMesaConCapacidad(1);
+        negocio.getRestaurante().añadirMesaConCapacidad(2);
+        negocio.getRestaurante().añadirMesaConCapacidad(4);
+        negocio.getRestaurante().añadirMesaLoungeConCapacidad(4);
 
         System.out.println("Mesas disponibles para reservar ahora");
         String fechaYA = LocalDateTime.now().plusDays(5).toString();
-        List<Mesa> mesasDisponibles = negocio.getRestaurante().verDisponibilidad(fechaYA.split("T")[0]);
+        List<Mesa> mesasDisponibles = negocio.getRestaurante().verDisponibilidad(fechaYA);
 
         mesasDisponibles.forEach(mesa -> {
             System.out.println(mesa.getClass().getSimpleName());

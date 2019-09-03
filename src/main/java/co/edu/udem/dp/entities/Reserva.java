@@ -2,12 +2,8 @@ package co.edu.udem.dp.entities;
 
 import co.edu.udem.dp.entities.mesas.Mesa;
 import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
-import co.edu.udem.dp.entities.motivosReservas.MotivoReservaAniversario;
-import co.edu.udem.dp.entities.motivosReservas.MotivoReservaBienvenida;
-import co.edu.udem.dp.entities.usuarios.JefeCocina;
 import co.edu.udem.dp.entities.usuarios.Usuario;
-
-import java.util.Date;
+import co.edu.udem.dp.fabricas.FabricaMotivoReserva;
 
 public class Reserva {
 
@@ -28,15 +24,8 @@ public class Reserva {
         this.fechaDeUso = fechaDeUso;
     }
 
-    public void crearMotivo(String nombre){
-        switch (nombre){
-            case "aniversario":
-                this.motivoReserva = new MotivoReservaAniversario(nombre);
-                break;
-            default:
-                this.motivoReserva = new MotivoReservaBienvenida("");
-        }
-        this.motivoReserva.añadirElemento();
+    public void añadirMotivoReserva(String nombre){
+        this.motivoReserva = FabricaMotivoReserva.crearMotivoDeReservaPara(nombre);
     }
 
     public Usuario getUsuario() {

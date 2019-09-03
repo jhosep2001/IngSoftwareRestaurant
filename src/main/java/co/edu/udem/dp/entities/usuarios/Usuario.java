@@ -6,6 +6,8 @@ public abstract class Usuario {
 
     private String nombre;
 
+    private String genero;
+
     private String correo;
 
     private String contrasena;
@@ -26,6 +28,14 @@ public abstract class Usuario {
         this.nombre = nombre;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     public String getCorreo() {
         return correo;
     }
@@ -40,5 +50,13 @@ public abstract class Usuario {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public List<Beneficio> getBeneficios() {
+        return beneficios;
+    }
+
+    public void setBeneficios(List<Beneficio> beneficios) {
+        this.beneficios = beneficios;
     }
 }
