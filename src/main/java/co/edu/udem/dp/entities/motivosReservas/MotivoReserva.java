@@ -10,10 +10,10 @@ public class MotivoReserva{
 
     public MotivoReserva(String nombre) {
         this.nombre = nombre;
-        añadirElemento();
+        anadirElemento();
     }
 
-    private void añadirElemento(){
+    private void anadirElemento(){
         switch (this.nombre.toLowerCase()){
             case "aniversario":
                 break;
@@ -22,11 +22,11 @@ public class MotivoReserva{
             case "despedida":
                 elementos.add(Elemento.Romantica);
                 break;
-            case "cumpleaños":
+            case "cumpleanos":
                 elementos.add(Elemento.Cumpleanos);
                 break;
             default:
-                // añadir elemento dinamicamente
+                // anadir elemento dinamicamente
         }
         elementos.add(Elemento.Torta);
     }

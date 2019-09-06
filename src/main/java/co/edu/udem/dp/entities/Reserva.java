@@ -24,10 +24,6 @@ public class Reserva {
         this.fechaDeUso = fechaDeUso;
     }
 
-    public void añadirMotivoReserva(String nombre){
-        this.motivoReserva = FabricaMotivoReserva.crearMotivoDeReservaPara(nombre);
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }

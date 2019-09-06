@@ -10,13 +10,13 @@ public class ReporteRestauranteTipoCliente extends ReporteRestauranteVisitor {
 
     @Override
     public void generarReporteVisit(Restaurante restaurante) {
-        restaurante.getReservas().forEach( reserva -> {
+        /*restaurante.getReservas().forEach( reserva -> {
             if(reserva.getUsuario() instanceof ClienteNormal){
                 clientesNormal++;
             } else if (reserva.getUsuario() instanceof ClienteVip){
                 clientesVip++;
             }
-        });
+        });*/
         System.out.println("Numero de clientes Normales que han reservado : " + clientesNormal);
         System.out.println("Numero de clientes vip que han reservado : " + clientesVip);
     }

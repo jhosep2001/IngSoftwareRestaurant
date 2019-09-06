@@ -16,7 +16,7 @@ public class ReporteRestauranteTipoMesa extends ReporteRestauranteVisitor {
 
     @Override
     public void generarReporteVisit(Restaurante restaurante) {
-        restaurante.getReservas().forEach(reserva -> {
+        /*restaurante.getReservas().forEach(reserva -> {
             if (reserva.getMesa() instanceof MesaIndividual) {
                 mesasIndividual++;
             } else if (reserva.getMesa() instanceof MesaPareja) {
@@ -26,7 +26,7 @@ public class ReporteRestauranteTipoMesa extends ReporteRestauranteVisitor {
             } else if (reserva.getMesa() instanceof MesaLounge) {
                 mesasLounge++;
             }
-        });
+        });*/
 
         System.out.println("Numero de mesas individuales que han reservado : " + mesasIndividual);
         System.out.println("Numero de mesas de parejas que han reservado : " + mesasPareja);
