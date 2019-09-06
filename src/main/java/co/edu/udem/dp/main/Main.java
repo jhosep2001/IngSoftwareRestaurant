@@ -27,8 +27,8 @@ public class Main {
         negocio.getRestaurante().crearMesalounge(4);
 
         System.out.println("Mesas disponibles para reservar ahora");
-        String fechaYA = LocalDateTime.now().plusDays(5).toString();
-        List<Mesa> mesasDisponibles = negocio.getRestaurante().verDisponibilidad(fechaYA.split("T")[0]);
+        String fechaYa = LocalDateTime.now().plusDays(5).toString();
+        List<Mesa> mesasDisponibles = negocio.getRestaurante().verDisponibilidad(fechaYa.split("T")[0]);
 
         mesasDisponibles.forEach(mesa -> {
             System.out.println(mesa.getClass().getSimpleName());
@@ -37,7 +37,7 @@ public class Main {
         Usuario usuario = negocio.getUsuarios().get(0);
         Mesa mesa = mesasDisponibles.get(0);
         MotivoReserva motivoReserva = negocio.getRestaurante().generarMotivoReserva("aniversario");
-        negocio.getRestaurante().realizarReserva(usuario, mesa, motivoReserva, fechaYA );
+        negocio.getRestaurante().realizarReserva(usuario, mesa, motivoReserva, fechaYa );
 
         System.out.println("Numero de reservas: " + negocio.getRestaurante().getReservas().size());
     }
