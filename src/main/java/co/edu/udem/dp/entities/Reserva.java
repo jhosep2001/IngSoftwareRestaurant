@@ -36,7 +36,7 @@ public class Reserva {
             default:
                 this.motivoReserva = new MotivoReservaBienvenida("");
         }
-        this.motivoReserva.añadirElemento();
+        this.motivoReserva.anadirElemento();
     }
 
     public Usuario getUsuario() {

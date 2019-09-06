@@ -12,7 +12,7 @@ public abstract class MotivoReserva{
         this.nombre = nombre;
     }
 
-    public void añadirElemento(){
+    public void anadirElemento(){
         elementos.add(Elemento.Cumpleanos);
         elementos.add(Elemento.Torta);
     }

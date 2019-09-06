@@ -17,16 +17,16 @@ public class Negocio {
         this.usuarios = new ArrayList<Usuario>();
     }
 
-    public void crearGranChef(String nombre, String correo, String contraseña){
-        usuarios.add(new GranChef(nombre, correo, contraseña));
+    public void crearGranChef(String nombre, String correo, String contrasena){
+        usuarios.add(new GranChef(nombre, correo, contrasena));
     }
 
-    public void crearJefeCocina(String nombre, String correo, String contraseña){
-        usuarios.add(new JefeCocina(nombre, correo, contraseña));
+    public void crearJefeCocina(String nombre, String correo, String contrasena){
+        usuarios.add(new JefeCocina(nombre, correo, contrasena));
     }
 
-    public void crearClienteNormal(String nombre, String correo, String contraseña){
-        usuarios.add(new ClienteNormal(nombre, correo, contraseña));
+    public void crearClienteNormal(String nombre, String correo, String contrasena){
+        usuarios.add(new ClienteNormal(nombre, correo, contrasena));
     }
 
     public Restaurante getRestaurante() {
