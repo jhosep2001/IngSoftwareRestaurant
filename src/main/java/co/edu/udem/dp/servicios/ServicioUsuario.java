@@ -1,4 +1,4 @@
-package co.edu.udem.dp.services;
+package co.edu.udem.dp.servicios;
 
 import co.edu.udem.dp.entities.usuarios.ClienteNormal;
 import co.edu.udem.dp.entities.usuarios.GranChef;
@@ -14,16 +14,8 @@ public class ServicioUsuario {
 
     public ServicioUsuario(){}
 
-    public void crearGranChef(String nombre, String correo, String contrasena){
-        usuarios.add(new GranChef(nombre, correo, contrasena));
-    }
-
-    public void crearJefeCocina(String nombre, String correo, String contrasena){
-        usuarios.add(new JefeCocina(nombre, correo, contrasena));
-    }
-
-    public void crearClienteNormal(String nombre, String correo, String contrasena){
-        usuarios.add(new ClienteNormal(nombre, correo, contrasena));
+    public void agregarUsuario(Usuario usuario){
+        usuarios.add(usuario);
     }
 
     public Usuario obtenerUsuarioPorNombre(String nombre){
@@ -33,5 +25,9 @@ public class ServicioUsuario {
             }
         }
         return null;
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
     }
 }

@@ -1,5 +1,6 @@
 package co.edu.udem.dp.entities.usuarios;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Usuario {
@@ -14,10 +15,12 @@ public abstract class Usuario {
 
     private List<Beneficio> beneficios;
 
-    public Usuario(String nombre, String correo, String contrasena) {
+    public Usuario(String nombre, String genero, String correo, String contrasena) {
         this.nombre = nombre;
+        this.genero = genero;
         this.correo = correo;
         this.contrasena = contrasena;
+        beneficios = new ArrayList<>();
     }
 
     public String getNombre() {

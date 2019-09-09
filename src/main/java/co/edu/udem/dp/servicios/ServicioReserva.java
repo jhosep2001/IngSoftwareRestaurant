@@ -1,15 +1,12 @@
-package co.edu.udem.dp.services;
+package co.edu.udem.dp.servicios;
 
 import co.edu.udem.dp.entities.Reserva;
 import co.edu.udem.dp.entities.mesas.Mesa;
 import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
 import co.edu.udem.dp.entities.usuarios.Usuario;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ServicioReserva {
     List<Reserva> reservas = new ArrayList<>();

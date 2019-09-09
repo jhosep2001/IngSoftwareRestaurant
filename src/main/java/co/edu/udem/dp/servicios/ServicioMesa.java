@@ -1,4 +1,4 @@
-package co.edu.udem.dp.services;
+package co.edu.udem.dp.servicios;
 
 import co.edu.udem.dp.entities.mesas.Mesa;
 import co.edu.udem.dp.fabricas.FabricaMesa;

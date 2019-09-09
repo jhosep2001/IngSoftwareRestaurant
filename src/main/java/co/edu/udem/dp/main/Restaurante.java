@@ -1,18 +1,11 @@
 package co.edu.udem.dp.main;
 
-import co.edu.udem.dp.entities.Reserva;
 import co.edu.udem.dp.entities.mesas.*;
-import co.edu.udem.dp.entities.motivosReservas.MotivoReserva;
-import co.edu.udem.dp.entities.usuarios.Usuario;
-import co.edu.udem.dp.fabricas.FabricaMesa;
-import co.edu.udem.dp.fabricas.FabricaMotivoReserva;
-import co.edu.udem.dp.reportes.ReporteRestauranteVisitor;
-import co.edu.udem.dp.services.ServicioMesa;
-import co.edu.udem.dp.services.ServicioReserva;
+import co.edu.udem.dp.reportes.restaurante.ReporteRestauranteVisitor;
+import co.edu.udem.dp.servicios.ServicioMesa;
+import co.edu.udem.dp.servicios.ServicioReserva;
 
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,11 +25,11 @@ public class Restaurante {
         return (this.servicioMesa.getMesas().stream().filter(mesa -> !mesasOcupadas.contains(mesa)).collect(Collectors.toList()));
     }
 
-    ServicioReserva getServicioReserva() {
+    public ServicioReserva getServicioReserva() {
         return servicioReserva;
     }
 
-    ServicioMesa getServicioMesa() {
+    public ServicioMesa getServicioMesa() {
         return servicioMesa;
     }
 
