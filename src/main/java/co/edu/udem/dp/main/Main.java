@@ -17,10 +17,10 @@ import java.util.List;
 public class Main {
 
     //Atributos para Mocks
-    private static Negocio negocio = new Negocio();
+    private static NegocioController negocio = new NegocioController();
 
     public static void main (String[] args){
-        Restaurante restaurante = negocio.getRestaurante();
+        RestauranteController restaurante = negocio.getRestaurante();
         Usuario cliente = new ConstructorClienteNormal()
                 .nombre("yasuri")
                 .femenino()

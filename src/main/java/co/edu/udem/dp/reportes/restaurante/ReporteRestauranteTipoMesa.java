@@ -1,11 +1,11 @@
 package co.edu.udem.dp.reportes.restaurante;
 
 import co.edu.udem.dp.entities.mesas.*;
-import co.edu.udem.dp.main.Restaurante;
+import co.edu.udem.dp.main.RestauranteController;
 
 import java.util.List;
 
-public class ReporteRestauranteTipoMesa extends ReporteRestauranteVisitor {
+public class ReporteRestauranteTipoMesa implements ReporteRestauranteVisitor {
 
     private int mesasIndividual = 0;
     private int mesasPareja = 0;
@@ -14,7 +14,7 @@ public class ReporteRestauranteTipoMesa extends ReporteRestauranteVisitor {
 
 
     @Override
-    public void generarReporteVisit(Restaurante restaurante) {
+    public void generarReporteVisit(RestauranteController restaurante) {
 
         List<Mesa> mesas = restaurante.getServicioMesa().getMesas();
         mesas.forEach(mesa -> {

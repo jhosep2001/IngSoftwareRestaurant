@@ -1,8 +1,8 @@
 package co.edu.udem.dp.reportes.restaurante;
 
-import co.edu.udem.dp.main.Restaurante;
+import co.edu.udem.dp.main.RestauranteController;
 
-public abstract class ReporteRestauranteVisitor {
+public interface  ReporteRestauranteVisitor {
 
-    public abstract void generarReporteVisit(Restaurante restaurante);
+    void generarReporteVisit(RestauranteController restaurante);
 }

@@ -1,8 +1,8 @@
 package co.edu.udem.dp.reportes.negocio;
 
-import co.edu.udem.dp.main.Negocio;
+import co.edu.udem.dp.main.NegocioController;
 
-public abstract class ReportesNegocioVisitor {
+public interface ReportesNegocioVisitor {
 
-    public abstract void generarReporteVisit(Negocio negocio);
+    void generarReporteVisit(NegocioController negocio);
 }

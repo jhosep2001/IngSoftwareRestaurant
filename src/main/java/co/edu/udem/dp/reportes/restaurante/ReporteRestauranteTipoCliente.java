@@ -3,16 +3,16 @@ package co.edu.udem.dp.reportes.restaurante;
 import co.edu.udem.dp.entities.Reserva;
 import co.edu.udem.dp.entities.usuarios.ClienteNormal;
 import co.edu.udem.dp.entities.usuarios.ClienteVip;
-import co.edu.udem.dp.main.Restaurante;
+import co.edu.udem.dp.main.RestauranteController;
 
 import java.util.List;
 
-public class ReporteRestauranteTipoCliente extends ReporteRestauranteVisitor {
+public class ReporteRestauranteTipoCliente implements ReporteRestauranteVisitor {
 
     private  int clientesNormal = 0 , clientesVip = 0;
 
     @Override
-    public void generarReporteVisit(Restaurante restaurante) {
+    public void generarReporteVisit(RestauranteController restaurante) {
         List<Reserva> reservas = restaurante.getServicioReserva().getReservas();
         reservas.forEach( reserva -> {
             if(reserva.getUsuario() instanceof ClienteNormal){
