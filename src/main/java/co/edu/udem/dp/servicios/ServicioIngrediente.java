@@ -8,5 +8,23 @@ public class ServicioIngrediente {
 
     private List<Ingrediente> ingredientes;
 
+    public ServicioIngrediente() {
 
+    }
+
+    public ServicioIngrediente(List<Ingrediente> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public void añadirIngrediente(Ingrediente ingrediente) {
+        this.ingredientes.add(ingrediente);
+    }
+
+    public void modificarIngrediente(Ingrediente ingrediente, Long cantidad) {
+
+    }
+
+    public Boolean verificarIngrediente(Ingrediente ingrediente, Long cantidad) {
+        return true;
+    }
 }

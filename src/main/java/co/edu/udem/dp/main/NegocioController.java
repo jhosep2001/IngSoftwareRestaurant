@@ -1,18 +1,19 @@
 package co.edu.udem.dp.main;
 
+import co.edu.udem.dp.servicios.ServicioRestaurante;
 import co.edu.udem.dp.servicios.ServicioUsuario;
 
 public class NegocioController {
-    private RestauranteController restaurante;
+    private ServicioRestaurante servicioRestaurantes;
     private ServicioUsuario servicioUsuario;
 
     public NegocioController(){
-        this.restaurante = new RestauranteController();
+        this.servicioRestaurantes = new ServicioRestaurante();
         this.servicioUsuario = new ServicioUsuario();
     }
 
-    public RestauranteController getRestaurante() {
-        return restaurante;
+    public ServicioRestaurante getRestaurante() {
+        return servicioRestaurantes;
     }
 
     public ServicioUsuario getServicioUsuario() {
