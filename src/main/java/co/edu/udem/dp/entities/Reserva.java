@@ -8,7 +8,7 @@ import co.edu.udem.dp.fabricas.FabricaMotivoReserva;
 public class Reserva {
 
     private Usuario usuario;
-    private Mesa mesa;
+    private Reservable reservable;
     private MotivoReserva motivoReserva;
     private Long valor;
     private String fechaReserva;
@@ -17,9 +17,9 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(Usuario usuario, Mesa mesa, MotivoReserva motivoReserva, String fechaDeUso) {
+    public Reserva(Usuario usuario, Reservable reservable, MotivoReserva motivoReserva, String fechaDeUso) {
         this.usuario = usuario;
-        this.mesa = mesa;
+        this.reservable = reservable;
         this.motivoReserva = motivoReserva;
         this.fechaDeUso = fechaDeUso;
     }
@@ -32,12 +32,12 @@ public class Reserva {
         this.usuario = usuario;
     }
 
-    public Mesa getMesa() {
-        return mesa;
+    public Reservable getReservable() {
+        return reservable;
     }
 
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
+    public void setReservable(Reservable reservable) {
+        this.reservable = reservable;
     }
 
     public MotivoReserva getMotivoReserva() {

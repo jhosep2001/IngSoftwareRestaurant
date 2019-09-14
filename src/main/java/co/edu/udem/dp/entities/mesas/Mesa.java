@@ -1,6 +1,8 @@
 package co.edu.udem.dp.entities.mesas;
 
-public abstract class Mesa {
+import co.edu.udem.dp.entities.Reservable;
+
+public abstract class Mesa implements Reservable {
 
     private int capacidad;
 
