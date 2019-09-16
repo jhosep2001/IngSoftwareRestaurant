@@ -1,12 +1,10 @@
 package co.edu.udem.dp.servicios;
 
-import co.edu.udem.dp.entities.usuarios.ClienteNormal;
-import co.edu.udem.dp.entities.usuarios.GranChef;
-import co.edu.udem.dp.entities.usuarios.JefeCocina;
-import co.edu.udem.dp.entities.usuarios.Usuario;
+import co.edu.udem.dp.entities.usuarios.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ServicioUsuario {
 
@@ -27,7 +25,22 @@ public class ServicioUsuario {
         return null;
     }
 
+    public List<Usuario> obtenerJefesDeCocina(){
+        return  usuarios.stream().filter(usuario -> usuario instanceof JefeCocina).collect(Collectors.toList());
+    }
+
     public List<Usuario> getUsuarios() {
         return usuarios;
+    }
+
+    public void convertirClienteEnVip(Usuario cliente){
+        for(int i = 0, n = usuarios.size(); i < n; i++) {
+            if(usuarios.get(i).equals(cliente)){
+                List<Beneficio> beneficios = new ArrayList<>(cliente.getBeneficios());
+                cliente = new ClienteVip(cliente.getNombre(), cliente.getGenero(), cliente.getCorreo(), cliente.getContrasena());
+                cliente.setBeneficios(beneficios);
+                usuarios.set(i, cliente);
+            }
+        }
     }
 }

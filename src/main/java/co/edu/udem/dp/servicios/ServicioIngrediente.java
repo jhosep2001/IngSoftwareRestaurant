@@ -2,11 +2,12 @@ package co.edu.udem.dp.servicios;
 
 import co.edu.udem.dp.entities.ingrediente.Ingrediente;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServicioIngrediente {
 
-    private List<Ingrediente> ingredientes;
+    private List<Ingrediente> ingredientes = new ArrayList<>();
 
     public ServicioIngrediente() {
 
@@ -26,5 +27,9 @@ public class ServicioIngrediente {
 
     public Boolean verificarIngrediente(Ingrediente ingrediente, Long cantidad) {
         return true;
+    }
+
+    public List<Ingrediente> getIngredientes() {
+        return ingredientes;
     }
 }

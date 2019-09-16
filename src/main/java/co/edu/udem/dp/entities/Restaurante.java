@@ -15,4 +15,20 @@ public class Restaurante {
         this.direccion = direccion;
         this.telefono = telefono;
     }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public JefeCocina getJefeCocina() {
+        return jefeCocina;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
 }
